@@ -1,0 +1,20 @@
+import React from 'react';
+import Navbar from '../Component/Navbar';
+import Personal from '../Component/Personalinfo';
+import Experience from '../Component/Experience';
+import Skills from '../Component/Skills';
+import Contact from '../Component/Contact';
+import Footer from '../Component/Footer';
+
+export default function () {
+    return (
+        <div>
+            <Navbar />
+            <Personal />
+            <Skills />
+            <Experience />
+            <Contact />
+            <Footer />
+        </div>
+    )
+}

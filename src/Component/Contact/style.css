@@ -1,0 +1,216 @@
+.contact-part1 {
+  padding: 2rem;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem;
+}
+
+input.input-name {
+  padding: 1rem;
+  background-color: transparent;
+}
+
+.input-name::placeholder {
+  color: #04aa6d;
+}
+
+input.input-email {
+  padding: 1rem;
+  background-color: transparent;
+}
+
+.input-email::placeholder {
+  color: #04aa6d;
+}
+
+input.input-number {
+  padding: 1rem;
+  background-color: transparent;
+}
+
+.input-number::placeholder {
+  color: #04aa6d;
+}
+
+#text-are {
+  background-color: transparent;
+  color: black;
+  border-top: 0;
+  border-right: 0;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 10rem;
+  font-size: 1.2rem;
+  padding-left: 12px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section input {
+  /* width: 50%; */
+  color: black;
+  border-bottom: 1px solid black;
+  border-top: 0;
+  border-left: 1px solid black;
+  border-right: 0;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+#text-are::placeholder {
+  color: #04aa6d;
+}
+
+.submit-btn {
+  width: 7rem;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  margin: 2rem auto;
+  border: 0;
+  font-weight: bold;
+  background-color: black;
+  color: #fff;
+}
+
+.submit-btn:hover {
+  background-color: #04aa6d;
+  color: #fff;
+}
+
+.contact-main {
+  flex-direction: row;
+  margin-left: 10rem;
+}
+
+.contact > div {
+  width: 45%;
+}
+
+.contact-item {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 300px;
+  align-items: center;
+}
+
+.contact-item svg {
+  color: black;
+  width: 50px;
+  font-size: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form a {
+  color: black;
+  text-decoration: none;
+}
+
+.contact-icon-logo {
+  display: flex;
+  font-size: 40px;
+  justify-content: center;
+}
+
+.contact-icon-logo a {
+  margin: 1rem;
+}
+
+.whatsapp-icon {
+  color: black;
+}
+
+.whatsapp-icon:hover {
+  color: rgb(12, 182, 77);
+}
+
+.facebook-icon {
+  color: black;
+}
+
+.facebook-icon:hover {
+  color: #6292c9;
+}
+
+.github-icon {
+  color: black;
+}
+
+.github-icon:hover {
+  color: #ff8800;
+}
+
+.linkedin-icon {
+  color: black;
+}
+
+.linkedin-icon:hover {
+  color: #078fff;
+}
+
+.contact-main {
+  flex-direction: column;
+  align-items: flex-start !important;
+  padding: 2rem 0 0 0 !important;
+}
+
+.contact {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.links {
+  width: 50% !important;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.links hr {
+  width: 50%;
+  margin: 2rem auto;
+}
+
+@media screen and (max-width: 992px) {
+  .contact-main {
+    display: flex;
+    flex-direction: column !important;
+    padding: 6rem 1rem !important;
+  }
+
+  .contact {
+    flex-direction: column;
+  }
+
+  .contact > div {
+    width: 100% !important;
+  }
+  .contact-part2 {
+    position: absolute;
+    top: 63rem;
+  }
+
+  .contact-icon-logo {
+    display: flex;
+    font-size: 40px;
+    justify-content: space-between;
+  }
+
+  .contact-part1 {
+    width: 100%;
+  }
+}

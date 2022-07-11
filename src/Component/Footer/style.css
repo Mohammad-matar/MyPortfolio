@@ -1,0 +1,30 @@
+footer {
+  background-color: black;
+  color: #04aa6d;
+  padding: 2%;
+  font-size: 2rem;
+}
+footer ul,
+li {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer_icons {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-evenly;
+  font-size: 4rem;
+}
+
+.footer_icons a {
+  color: white;
+}
+.footer_icons a:hover {
+  color: #04aa6d;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
