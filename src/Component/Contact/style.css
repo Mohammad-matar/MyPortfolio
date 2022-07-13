@@ -1,3 +1,14 @@
+.section-contact-main {
+  padding: 8%;
+}
+
+.title > h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  margin-bottom: 5rem;
+}
+
 .contact-part1 {
   padding: 2rem;
 }

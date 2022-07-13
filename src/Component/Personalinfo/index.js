@@ -1,7 +1,24 @@
 import React from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import './style.css';
 
 export default function Personal() {
+    const [data, setData] = useState();
+    useEffect(() => {
+        getall();
+    }, []);
+    const getall = () => {
+        axios.get('http://localhost:1337/api/info?populate=deep')
+            .then(res => {
+                setData(res.data.data);
+                console.log('hello', res.data.data)
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
     return (
         <section id='about' style={{ paddingTop: '70px' }}>
             <div className="main-text">
@@ -9,23 +26,28 @@ export default function Personal() {
                     <div className="main-text-name">
                         <span>
                             <h1>
-                                Hi, I am <i>Mohammad Matar</i>, I am a Software Developer based in Tripoli.
+                                Hello, I am <i>{data && data.attributes.name}</i>, <br /> {data && data.attributes.headline}.
                             </h1>
                         </span>
                     </div>
                     <br />
                     <div className="main-text-description">
-                        Hard-working and self-motivated team player <br />with good time management skills,
-                        looking for <br /> new challenges and experiences in a fast-moving industry
-                        <br />and passionate, ambitious Full-Stack web developer who enjoys coding and learning new technologies and tools that make our life easier
+                        {data && data.attributes.biography}
                     </div>
-                    <div className='about-email'>
-                        <a href='mailto:moe.matar1998@gmail.com'>Gmail: Moe.matar1998@gmail.com</a>
+                    <div className='btn_personal_info'>
+                        <button className='btn-cv'>
+                            <a href={`http://localhost:1337${data && data.attributes.cv.data.attributes.url}`} target={'blank'}>Check My CV</a>
+                        </button>
+                        <button className='btn-email'>
+                            <a href={`http://localhost:1337${data && data.attributes.contact_info[1].url}`} target={'blank'}>Gmail: Moe.matar1998@gmail.com</a>
+                        </button>
+
                     </div>
+
                 </div>
 
                 <div className='main-image'>
-                    <img src='/images/image.jpg'></img>
+                    <img src={`http://localhost:1337${data && data.attributes.profile.image.data.attributes.url}`} alt={`${data && data.attributes.profile.alt}`}></img>
                 </div>
 
             </div>

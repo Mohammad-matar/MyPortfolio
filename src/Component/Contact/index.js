@@ -16,7 +16,8 @@ import './style.css'
 export default function Contact() {
     return (
         <section id='contact'>
-            <div className="section contact-main ">
+            <hr />
+            <div className="section-contact-main ">
                 <div className="title">
                     <h1>Contact Me!</h1>
                     <h2>
@@ -64,40 +65,32 @@ export default function Contact() {
                         <div className="contact-links">
                             <div className="contact-form">
                                 <div className="contact-item">
-                                    <a href="#">
+                                    <a href="tel:+96171728733">
                                         <FaPhoneAlt className="contact-phone" fontSize={40} />
-                                    </a>
-                                    <a href="#">
                                         <h3>+961 71 728 733</h3>
                                     </a>
                                 </div>
-                                <div class="contact-item">
+                                <div className="contact-item">
                                     <a href="#">
                                         <FaRegEnvelope className="contact-message" fontSize={40} />
-                                    </a>
-                                    <a href="#">
                                         <h3>moe.matar1998@gmail.com</h3>
                                     </a>
                                 </div>
-                                <div class="contact-item">
-                                    <a href="#">
-                                        <FaMapMarkerAlt
-                                            className="contact-location"
-                                            fontSize={40}
-                                        />
-                                    </a>
-                                    <a href="#">
-                                        <h3>Tripoli, Lebanon</h3>
-                                    </a>
+                                <div className="contact-item">
+                                    <FaMapMarkerAlt
+                                        className="contact-location"
+                                        fontSize={40}
+                                    />
+                                    <h3>Tripoli, Lebanon</h3>
                                 </div>
                             </div>
                             <hr />
-                            <div class="contact-icon-logo">
-                                <a href="#">
+                            <div className="contact-icon-logo">
+                                <a href="https://whatsapp.com">
                                     <FaWhatsapp className="whatsapp-icon" />
                                 </a>
 
-                                <a href="#">
+                                <a href="https://www.facebook.com/mohammad.matar.984">
                                     <BsFacebook className="facebook-icon" />
                                 </a>
 
