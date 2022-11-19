@@ -37,7 +37,7 @@ export default function Skills() {
 
           {isLoading?<>isLoading...</>: data.map((data)=>{
             return (
-              <div>
+              <div className="skills_name">
                 <h3>{data.name}</h3>
                 <img src={`http://localhost:4040/uploads/${data.img}`}></img>
               </div>

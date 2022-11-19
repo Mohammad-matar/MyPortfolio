@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { IoIosMenu, IoMdClose } from "react-icons/io"
 import "./style.css";
-// import logo from '../../img/logo.png';
+// import logo from "../../portfoliologo/portfoliologo";
 
 
 const Navbarmenu = () => {
@@ -70,9 +70,9 @@ const Navbarmenu = () => {
                   <li className="menu-item">
                     <a href="#skills">Skills</a>
                   </li>
-                  <li className="menu-item">
+                  {/* <li className="menu-item">
                     <a href="#projects">Projects</a>
-                  </li>
+                  </li> */}
                   <li className="menu-item">
                     <a href="#contact">Contact Me</a>
                   </li>
