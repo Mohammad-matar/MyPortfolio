@@ -13,7 +13,7 @@ export default function Personal() {
         axios
           .get("http://localhost:4040/personalinfo")
           .then((res) => {
-            setData(res.data.data[1]);
+            setData(res.data.data[0]);
             setIsLoading(false);
           })
           .catch((err) => {
@@ -31,8 +31,11 @@ if(isloading){
             <div className="main-text-name">
               <span>
                 <h1>
-                  Hello, I am <i>{data.name} </i>, <br /> dojsahdasjkdbsadkjnsa
-                  dkjb dsakjbd nsadk jasndakjdb ahjdba.
+                  Hello, I am{" "}
+                  <span style={{ color: "#04aa6d" }}>
+                    <i>{data.name} </i>
+                  </span>{" "}
+                  <br /> Junior Web Development
                 </h1>
               </span>
             </div>

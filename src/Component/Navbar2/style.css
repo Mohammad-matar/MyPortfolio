@@ -157,11 +157,10 @@ li {
   color: #04aa6d !important;
 }
 
-.header__middle__logo img {
-  max-width: 207px;
-  margin: 17px 0 0 0;
+.logo_img{
+  width: 100px;
+  margin-top: 7px;
 }
-
 @media (max-width: 991px) {
   .header__middle__logo {
     width: 77%;

@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { IoIosMenu, IoMdClose } from "react-icons/io"
 import "./style.css";
-// import logo from "../../portfoliologo/portfoliologo";
-
+import logo from '../../portfoliologo/portfoliologo.png'
 
 const Navbarmenu = () => {
 
@@ -28,7 +27,7 @@ const Navbarmenu = () => {
             {/* Add Logo  */}
             <div className="header__middle__logo">
               <NavLink exact activeClassName="is-active" to="/">
-                <img src="" alt="logo" />
+                <img src={logo} alt="logo" className='logo_img'/>
               </NavLink>
             </div>
 

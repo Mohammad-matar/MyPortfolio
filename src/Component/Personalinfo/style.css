@@ -1,7 +1,8 @@
 .main-text {
   display: flex;
   justify-content: space-between;
-  padding: 50px;
+  padding: 10px;
+  margin-top: 20px;
 }
 
 .main-about-page {
@@ -36,7 +37,7 @@
 .btn_personal_info {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 
 .btn-email {
