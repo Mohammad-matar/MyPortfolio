@@ -22,49 +22,67 @@ const Navbarmenu = () => {
     }
 
     return (
-        <header className="header__middle">
-            <div className="container">
-                <div className="row">
-
-                    {/* Add Logo  */}
-                    <div className="header__middle__logo">
-                        <NavLink exact activeClassName='is-active' to="/">
-                            <img src="" alt="logo" />
-                        </NavLink>
-                    </div>
-
-                    <div className="header__middle__menus">
-                        <nav className="main-nav " >
-
-                            {/* Responsive Menu Button */}
-                            {isResponsiveclose === true ? <>
-                                <span className="menubar__button" style={{ display: 'none' }} onClick={toggleClass} > <IoMdClose />   </span>
-                            </> : <>
-                                <span className="menubar__button" style={{ display: 'none' }} onClick={toggleClass} > <IoIosMenu />   </span>
-                            </>}
-
-
-                            <ul className={boxClass.join(' ')}>
-                                {/* <li className="menu-item" >
-                                    <NavLink exact activeClassName='is-active' onClick={toggleClass} to={`#`}> Home </NavLink>
-                                </li> */}
-                                {/* <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`#`}> About </NavLink> </li>
-                                <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`#`}> Experience </NavLink> </li>
-                                <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`#`}> Skills </NavLink> </li>
-                                <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`#`}> Project </NavLink> </li>
-                                <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`#`}> Contact </NavLink> </li> */}
-                                <li className='menu-item'> <a href="#about">About Me</a></li>
-                                <li className='menu-item'><a href="#experience">Experience</a></li>
-                                <li className='menu-item'><a href="#skills">Skills</a></li>
-                                <li className='menu-item'><a href="#projects">Projects</a></li>
-                                <li className='menu-item'><a href="#contact">Contact Me</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+      <header className="header__middle">
+        <div className="container">
+          <div className="row">
+            {/* Add Logo  */}
+            <div className="header__middle__logo">
+              <NavLink exact activeClassName="is-active" to="/">
+                <img src="" alt="logo" />
+              </NavLink>
             </div>
-        </header>
-    )
+
+            <div className="header__middle__menus">
+              <nav className="main-nav ">
+                {/* Responsive Menu Button */}
+                {isResponsiveclose === true ? (
+                  <>
+                    <span
+                      className="menubar__button"
+                      style={{ display: "none" }}
+                      onClick={toggleClass}
+                    >
+                      {" "}
+                      <IoMdClose />{" "}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span
+                      className="menubar__button"
+                      style={{ display: "none" }}
+                      onClick={toggleClass}
+                    >
+                      {" "}
+                      <IoIosMenu />{" "}
+                    </span>
+                  </>
+                )}
+
+                <ul className={boxClass.join(" ")}>
+                  <li className="menu-item">
+                    {" "}
+                    <a href="#about">About Me</a>
+                  </li>
+                  <li className="menu-item">
+                    <a href="#experience">Experience</a>
+                  </li>
+                  <li className="menu-item">
+                    <a href="#skills">Skills</a>
+                  </li>
+                  <li className="menu-item">
+                    <a href="#projects">Projects</a>
+                  </li>
+                  <li className="menu-item">
+                    <a href="#contact">Contact Me</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+    );
 }
 
 export default Navbarmenu

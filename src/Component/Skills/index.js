@@ -4,34 +4,49 @@ import "./style.css";
 
 export default function Skills() {
     const [data, setData] = useState();
+    const [isLoading, setIsLoading] = useState(true);
+    
     useEffect(() => {
         getall();
     }, []);
+
     const getall = () => {
-        axios.get('http://localhost:1337/api/skills?populate=deep')
-            .then(res => {
-                setData(res.data.data);
-            })
-            .catch(err => {
-                console.log(err);
-            })
+        axios
+          .get("http://localhost:4040/skills")
+          .then((res) => {
+            setData(res.data.data);
+            setIsLoading(false);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
     }
 
+    
     return (
-        <section id='skills'>
-            <hr />
-            <div className='skill-title'>
-                <b><i><u>Skills</u></i></b>
-            </div>
-            <div className='skills-container'>
-                {data && data.map((elt) => {
-                    return (
-                        <div key={elt.id}>
-                            <img src={`http://localhost:1337${elt.attributes.skill_logo.image.data.attributes.url}`} alt={`${elt.attributes.skill_logo.alt}`}></img>
-                        </div>
-                    )
-                })}
-            </div>
-        </section >
+      <section id="skills">
+        <hr />
+        <div className="skill-title">
+          <b>
+            <i>
+              <u>Skills</u>
+            </i>
+          </b>
+        </div>
+        <div className="skills-container">
+
+          {isLoading?<>isLoading...</>: data.map((data)=>{
+            return (
+              <div>
+                <h3>{data.name}</h3>
+                <img src={`http://localhost:4040/uploads/${data.img}`}></img>
+              </div>
+            );
+          })
+          
+        }
+          
+        </div>
+      </section>
     );
 }
