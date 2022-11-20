@@ -50,22 +50,15 @@ export default function Experience() {
                       <div className="demo">
                         <h3 className="vertical-timeline-element-title">
                           {data.name}
-                          <a
-                            href="https://abdallah-badra.herokuapp.com/"
-                            target={"blank"}
-                          >
-                            <i>-demo</i>
-                          </a>{" "}
+
+                          {data.demoURL && (
+                            <a href={`${data.demoURL}`} target={"blank"}>
+                              <i>-demo</i>
+                            </a>
+                          )}
                         </h3>
                       </div>
                       <p>{data.info}</p>
-                      {/* <div className="skills-experience">
-                          <ul>
-                            <li>{data.details}</li>
-                            <li>sdada</li>
-                            <li>sdada</li>
-                          </ul>
-                        </div> */}
                     </VerticalTimelineElement>
                   </>
                 );
