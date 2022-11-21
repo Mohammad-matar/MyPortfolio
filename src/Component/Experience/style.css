@@ -1,10 +1,18 @@
-.experience-title {
+.experience_section {
+  width: 95%;
+  max-width: 1300px;
+  margin: 3rem auto;
+  padding: 2em 0;
+}
+
+.experience_title {
   display: flex;
   justify-content: center;
-  margin-top: 15rem;
-  font-size: 50px;
+  font-size: 1.75rem;
+  transition: all 0.3s ease-in-out;
 }
-.experience-title:hover {
+
+.experience_title:hover {
   color: #04aa6d;
 }
 

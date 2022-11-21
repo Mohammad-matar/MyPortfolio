@@ -2,3 +2,6 @@ body {
   background-color: rgb(226, 223, 219);
   /* background-image: url("../public/images/image.jpg"); */
 }
+html {
+  scroll-behavior: smooth;
+}

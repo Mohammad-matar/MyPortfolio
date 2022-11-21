@@ -1,52 +1,51 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 import "./style.css";
 
 export default function Skills() {
-    const [data, setData] = useState();
-    const [isLoading, setIsLoading] = useState(true);
-    
-    useEffect(() => {
-        getall();
-    }, []);
+  const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
-    const getall = () => {
-        axios
-          .get("http://localhost:4040/skills")
-          .then((res) => {
-            setData(res.data.data);
-            setIsLoading(false);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-    }
+  useEffect(() => {
+    getall();
+  }, []);
 
-    
-    return (
-      <section id="skills">
-        <hr />
-        <div className="skill-title">
-          <b>
-            <i>
-              <u>Skills</u>
-            </i>
-          </b>
-        </div>
-        <div className="skills-container">
+  const getall = () => {
+    axios
+      .get("http://localhost:4040/skills")
+      .then((res) => {
+        setData(res.data.data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
-          {isLoading?<>isLoading...</>: data.map((data)=>{
+  return (
+    <section id="skills" className="skills_section">
+      <div className="skills_title">
+        <h2>Skills</h2>
+      </div>
+      <div className="skills_list">
+        {isLoading ? (
+          <>isLoading...</>
+        ) : (
+          data.map((data) => {
             return (
-              <div className="skills_name">
-                <h3>{data.name}</h3>
-                <img src={`http://localhost:4040/uploads/${data.img}`}></img>
+              <div className="skill_item">
+                <div className="skill_img">
+                  <img
+                    src={`http://localhost:4040/uploads/${data.img}`}
+                    alt={data.name}
+                  />
+                </div>
+                <h3 className="skill_name">{data.name}</h3>
               </div>
             );
           })
-          
-        }
-          
-        </div>
-      </section>
-    );
+        )}
+      </div>
+    </section>
+  );
 }

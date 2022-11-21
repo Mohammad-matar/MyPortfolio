@@ -1,73 +1,68 @@
 import React, { useEffect, useState } from "react";
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import { MdWork } from 'react-icons/md';
-import axios from 'axios';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { MdWork } from "react-icons/md";
+import axios from "axios";
 import "./style.css";
 
 export default function Experience() {
-    const [data, setData] = useState();
-    const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        getall();
-    }, []);
-    const getall = () => {
-        axios
-          .get("http://localhost:4040/experience")
-          .then((res) => {
-            setData(res.data.data);
-            console.log(res.data.data);
-            setIsLoading(false);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-    }
+  useEffect(() => {
+    getall();
+  }, []);
+  const getall = () => {
+    axios
+      .get("http://localhost:4040/experience")
+      .then((res) => {
+        setData(res.data.data);
+        console.log(res.data.data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-    return (
-      <section id="experience">
-        <hr />
-        <div className="experience">
-          <div className="experience-title">
-            {" "}
-            <h1>Experience</h1>
-          </div>
-          <VerticalTimeline lineColor="Black">
-            {isLoading ? (
-              <>isLoading...</>
-            ) : (
-              data.map((data) => {
-                return (
-                  <>
-                    <VerticalTimelineElement
-                      className="vertical-timeline-element--Codi"
-                      // date={`${elt.attributes.period.start_date} - ${elt.attributes.period.end_date}`}
-                      iconStyle={{ background: "#04aa6d", color: "#fff" }}
-                      icon={<MdWork />}
-                      // key={elt.id}
-                    >
-                      <div className="demo">
-                        <h3 className="vertical-timeline-element-title">
-                          {data.name}
+  return (
+    <section id="experience" className="experience_section">
+      <div className="experience_title">
+        <h2>Experience</h2>
+      </div>
 
-                          {data.demoURL && (
-                            <a href={`${data.demoURL}`} target={"blank"}>
-                              <i>-demo</i>
-                            </a>
-                          )}
-                        </h3>
-                      </div>
-                      <p>{data.info}</p>
-                    </VerticalTimelineElement>
-                  </>
-                );
-              })
-            )}
-          </VerticalTimeline>
-        </div>
-      </section>
-    );
+      {isLoading ? (
+        <>isLoading...</>
+      ) : (
+        <VerticalTimeline lineColor="Black">
+          {data.map((data) => {
+            return (
+              <>
+                <VerticalTimelineElement
+                  className="vertical-timeline-element--Codi"
+                  iconStyle={{ background: "#04aa6d", color: "#fff" }}
+                  icon={<MdWork />}
+                >
+                  <div className="demo">
+                    <h3 className="vertical-timeline-element-title">
+                      {data.name}
+                      {data.demoURL && (
+                        <a href={`${data.demoURL}`} target={"blank"}>
+                          <i> - demo</i>
+                        </a>
+                      )}
+                    </h3>
+                  </div>
+                  <p>{data.info}</p>
+                </VerticalTimelineElement>
+              </>
+            );
+          })}
+        </VerticalTimeline>
+      )}
+    </section>
+  );
 }
-
-

@@ -6,15 +6,15 @@ import Skills from '../Component/Skills';
 import Contact from '../Component/Contact';
 import Footer from '../Component/Footer';
 
-export default function () {
-    return (
-        <div>
-            <Navbar />
-            <Personal />
-            <Skills />
-            <Experience />
-            <Contact />
-            <Footer />
-        </div>
-    )
+export default function Home() {
+  return (
+    <div>
+      <Navbar />
+      <Personal />
+      <Skills />
+      <Experience />
+      <Contact />
+      <Footer />
+    </div>
+  );
 }
