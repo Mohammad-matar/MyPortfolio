@@ -35,7 +35,9 @@ export default function Experience() {
       </div>
 
       {isLoading ? (
-        <>isLoading...</>
+        <div className="lds-circle">
+          <div></div>
+        </div>
       ) : (
         <VerticalTimeline lineColor="Black">
           {data.map((data) => {

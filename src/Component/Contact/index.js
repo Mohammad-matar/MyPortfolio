@@ -1,112 +1,106 @@
-
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 import {
-    FaPhoneAlt,
-    FaRegEnvelope,
-    FaWhatsapp,
-    FaLinkedin,
-    FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaRegEnvelope,
+  FaWhatsapp,
+  FaLinkedin,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 import { BsFacebook, BsGithub } from "react-icons/bs";
-// import emailjs from "@emailjs/browser";
-import React from 'react'
-import './style.css'
-
+import "./style.css";
 
 export default function Contact() {
-    return (
-        <section id='contact'>
-            <hr />
-            <div className="section-contact-main ">
-                <div className="title">
-                    <h1>Contact Me!</h1>
-                    <h2>
-                        Want a website for your brand and business? <br /> I design what you
-                        desire....
-                    </h2>
-                </div>
-                <div className="contact">
-                    <div className="contact-section">
-                        <form className="form-section">
-                            <input
-                                className="input-name"
-                                type="text"
-                                name="from_name"
-                                required
-                                placeholder="ENTER YOUR NAME*"
-                            />
+  //sendemail function
+  const form = useRef();
 
-                            <input
-                                className="input-email"
-                                type="email"
-                                name="email"
-                                required
-                                placeholder="ENTER YOUR EMAIL*"
-                            />
+  function sendEmail(e) {
+    e.preventDefault();
 
-                            <input
-                                className="input-number"
-                                type="tel"
-                                name="phone"
-                                required
-                                placeholder="PHONE NUMBER*"
-                            />
-                            <textarea
-                                id="text-are"
-                                name="message"
-                                placeholder="YOUR MESSAGE*"
-                                rows="5"
-                                cols="50"
-                            ></textarea>
-                            <button className="submit-btn">Submit</button>
-                        </form>
-                    </div>
-                    <div className="links">
-                        <div className="contact-links">
-                            <div className="contact-form">
-                                <div className="contact-item">
-                                    <a href="tel:+96171728733">
-                                        <FaPhoneAlt className="contact-phone" fontSize={40} />
-                                        <h3>+961 71 728 733</h3>
-                                    </a>
-                                </div>
-                                <div className="contact-item">
-                                    <a href="#">
-                                        <FaRegEnvelope className="contact-message" fontSize={40} />
-                                        <h3>moe.matar1998@gmail.com</h3>
-                                    </a>
-                                </div>
-                                <div className="contact-item">
-                                    <FaMapMarkerAlt
-                                        className="contact-location"
-                                        fontSize={40}
-                                    />
-                                    <h3>Tripoli, Lebanon</h3>
-                                </div>
-                            </div>
-                            <hr />
-                            <div className="contact-icon-logo">
-                                <a href="https://whatsapp.com">
-                                    <FaWhatsapp className="whatsapp-icon" />
-                                </a>
+    emailjs
+      .send("gmail", "template_3bbikye", e.target, "w6Z2NmSAlwHuGkt_Z")
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
 
-                                <a href="https://www.facebook.com/mohammad.matar.984">
-                                    <BsFacebook className="facebook-icon" />
-                                </a>
+  return (
+    <section id="contact" className="contact_section">
+      <div className="contact_title">
+        <h2>Contact Me!</h2>
+      </div>
+      <div className="contact">
+        <div className="contact_form">
+          <form className="form" onSubmit={sendEmail}>
+            <input
+              className="input bordered"
+              type="text"
+              name="name"
+              required
+              placeholder="Your name... *"
+            />
+            <input
+              className="input bordered"
+              type="email"
+              name="email"
+              required
+              placeholder="Your email... *"
+            />
+            <textarea
+              id="text-area"
+              className="bordered"
+              name="message"
+              placeholder="Your message... *"
+              rows="5"
+              cols="50"
+            ></textarea>
+            <button className="submit-btn" ref={form}>
+              Submit
+            </button>
+          </form>
+        </div>
+        <div className="contact_info">
+          <ul className="contact_links">
+            <li className="contact_item">
+              <FaPhoneAlt className="contact-phone" fontSize={40} />
+              <a href="tel:+96171728733">+961 71 728 733</a>
+            </li>
+            <li className="contact_item">
+              <FaRegEnvelope className="contact-message" fontSize={40} />
+              <a href="mailto:moe.matar1998@gmail.com">
+                moe.matar1998@gmail.com
+              </a>
+            </li>
 
-                                <a href="#">
-                                    <BsGithub className="github-icon" />
-                                </a>
-
-                                <a href="#">
-                                    <FaLinkedin className="linkedin-icon" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-    );
+            <li className="contact_item">
+              <FaMapMarkerAlt className="contact-location" fontSize={40} />
+              <a href="#"> Tripoli, Lebanon</a>
+            </li>
+          </ul>
+          <hr />
+          <div className="contact_logo">
+            <a href="https://whatsapp.com">
+              <FaWhatsapp className="icon whatsapp-icon" />
+            </a>
+            <a href="https://www.facebook.com/mohammad.matar.984">
+              <BsFacebook className="icon facebook-icon" />
+            </a>
+            <a href="#">
+              <BsGithub className="icon github-icon" />
+            </a>
+            <a href="#">
+              <FaLinkedin className="icon linkedin-icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

@@ -29,7 +29,9 @@ export default function Skills() {
       </div>
       <div className="skills_list">
         {isLoading ? (
-          <>isLoading...</>
+          <div className="lds-circle">
+            <div></div>
+          </div>
         ) : (
           data.map((data) => {
             return (
