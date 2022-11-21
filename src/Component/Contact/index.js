@@ -14,12 +14,11 @@ import "./style.css";
 export default function Contact() {
   //sendemail function
   const form = useRef();
-
   function sendEmail(e) {
     e.preventDefault();
 
     emailjs
-      .send("gmail", "template_3bbikye", e.target, "w6Z2NmSAlwHuGkt_Z")
+      .sendForm("gmail", "contact_page", form.current, "w6Z2NmSAlwHuGkt_Z")
       .then(
         (result) => {
           console.log(result.text);
@@ -38,7 +37,7 @@ export default function Contact() {
       </div>
       <div className="contact">
         <div className="contact_form">
-          <form className="form" onSubmit={sendEmail}>
+          <form className="form" ref={form} onSubmit={sendEmail}>
             <input
               className="input bordered"
               type="text"
@@ -61,7 +60,7 @@ export default function Contact() {
               rows="5"
               cols="50"
             ></textarea>
-            <button className="submit-btn" ref={form}>
+            <button className="submit-btn" type="submit" value="Send">
               Submit
             </button>
           </form>
