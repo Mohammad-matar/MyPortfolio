@@ -29,7 +29,14 @@ export default function Skills() {
       </div>
       <div className="skills_list">
         {isLoading ? (
-          <div className="lds-circle">
+          <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
             <div></div>
           </div>
         ) : (

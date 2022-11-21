@@ -35,8 +35,17 @@ export default function Experience() {
       </div>
 
       {isLoading ? (
-        <div className="lds-circle">
-          <div></div>
+        <div className="lds-main">
+          <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       ) : (
         <VerticalTimeline lineColor="Black">
