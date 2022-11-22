@@ -17,7 +17,7 @@ export default function Experience() {
   }, []);
   const getall = () => {
     axios
-      .get("http://localhost:4040/experience")
+      .get("https://matar-portfolio-api.onrender.com/experience")
       .then((res) => {
         setData(res.data.data);
         console.log(res.data.data);

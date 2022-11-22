@@ -12,7 +12,7 @@ export default function Skills() {
 
   const getall = () => {
     axios
-      .get("http://localhost:4040/skills")
+      .get("https://matar-portfolio-api.onrender.com/skills")
       .then((res) => {
         setData(res.data.data);
         setIsLoading(false);
@@ -45,7 +45,7 @@ export default function Skills() {
               <div className="skill_item">
                 <div className="skill_img">
                   <img
-                    src={`http://localhost:4040/uploads/${data.img}`}
+                    src={`https://matar-portfolio-api.onrender.com/uploads/${data.img}`}
                     alt={data.name}
                   />
                 </div>
