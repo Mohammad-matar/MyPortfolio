@@ -49,7 +49,7 @@ export default function Footer() {
             </a>
           </li>
         </ul>
-        <p className="copyright">Copyright to Mohamad Matar Â©2022</p>
+        <p className="copyright">Copyright to Mohamad Matar ©2022</p>
       </div>
     </footer>
   );

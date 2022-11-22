@@ -6,6 +6,9 @@
   margin: 0 auto;
   padding: 2em 0;
 }
+.about_h1{
+  padding-right: 1.5em !important;
+}
 
 .about_content {
   width: 64%;
@@ -99,10 +102,16 @@
     font-size: 1rem;
     margin-right: 0;
   }
+  .about_h1{
+    padding-right: 0rem !important;
+    display: flex;
+  flex-direction: column;
+  }
 }
 
 @media (max-width: 414px) {
   .about_image > img {
     width: 70%;
   }
+  
 }

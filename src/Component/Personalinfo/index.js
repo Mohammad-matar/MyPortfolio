@@ -33,12 +33,12 @@ export default function Personal() {
       >
         <div className="about_content">
           <div className="about_name">
-            <h1>
+            <h1 className="about_h1">
               Hello, I am{" "}
               <span style={{ color: "#04aa6d" }}>
                 <i>{data.name} </i>
               </span>{" "}
-              <br /> Junior Web Development
+              <span> Junior Web Development</span>
             </h1>
           </div>
           <div className="about_description">{data.description}</div>

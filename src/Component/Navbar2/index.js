@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
 import "./style.css";
-import logo from "../../portfoliologo/portfoliologo.png";
+import logo from "../../portfoliologo/matar-logo.png";
 
 const Navbarmenu = () => {
   const [isMenu, setisMenu] = useState(false);
