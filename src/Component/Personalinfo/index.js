@@ -12,7 +12,7 @@ export default function Personal() {
   }, []);
   const getall = () => {
     axios
-      .get("https://matar-portfolio-api.onrender.com/personalinfo")
+      .get("https://matar-api.onrender.com/personalinfo")
       .then((res) => {
         setData(res.data.data[0]);
         setIsLoading(false);
@@ -58,7 +58,7 @@ export default function Personal() {
 
         <div className="about_image">
           <img
-            src={`https://matar-portfolio-api.onrender.com/uploads/${data.img}`}
+            src={`https://matar-api.onrender.com/uploads/${data.img}`}
             alt={"personal profile"}
           />
         </div>
