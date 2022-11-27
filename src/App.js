@@ -1,5 +1,6 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from './Pages/Home';
+import Dashboard from "./Dashboard/personal";
 import { Helmet } from "react-helmet";
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         </Routes>
       </BrowserRouter>
     </>
