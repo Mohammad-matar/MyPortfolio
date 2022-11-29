@@ -1,6 +1,7 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from './Pages/Home';
-import Dashboard from "./Dashboard/personal";
+import Dash from "./Pages/Dash";
+
 import { Helmet } from "react-helmet";
 import './App.css';
 
@@ -16,7 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+          {/* <Route path="/dashboard" element={<Dash />} /> */}
         </Routes>
       </BrowserRouter>
     </>

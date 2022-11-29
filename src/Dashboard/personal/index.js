@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import "./style.css";
 import Navbar2 from "../../Component/Navbar2"
-import { TextareaAutosize, TextField } from '@mui/material';
+import { TextField } from "@mui/material";
 
 
 export default function Dashboardinfo() {

@@ -85,7 +85,7 @@ export default function Contact() {
           </ul>
           <hr />
           <div className="contact_logo">
-            <a href="https://whatsapp.com">
+            <a href="https://wa.me/96171728733?text=Hello%20matarovv%20">
               <FaWhatsapp className="icon whatsapp-icon" />
             </a>
             <a href="https://www.facebook.com/mohammad.matar.984">
