@@ -85,16 +85,22 @@ export default function Contact() {
           </ul>
           <hr />
           <div className="contact_logo">
-            <a href="https://wa.me/96171728733?text=Hello%20matarovv%20">
+            <a
+              href="https://wa.me/96171728733?text=Hello%20matarovv%20"
+              target="blank"
+            >
               <FaWhatsapp className="icon whatsapp-icon" />
             </a>
-            <a href="https://www.facebook.com/mohammad.matar.984">
+            <a
+              href="https://www.facebook.com/mohammad.matar.984"
+              target="blank"
+            >
               <BsFacebook className="icon facebook-icon" />
             </a>
-            <a href="#">
+            <a href="https://github.com/Mohammad-matar" target="blank">
               <BsGithub className="icon github-icon" />
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/mohamad-matar" target="blank">
               <FaLinkedin className="icon linkedin-icon" />
             </a>
           </div>
